@@ -111,6 +111,20 @@ function renderBooks() {
 function addBookToLibrary(event) {
   // do stuff here
   event.preventDefault();
+  const titleInput = document.querySelector("#title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
+  const readInput = document.querySelector("#read");
+
+  const newBook = new Book(
+    titleInput.value,
+    authorInput.value,
+    parseInt(pagesInput.value),
+    readInput.checked
+  );
+
+  myLibrary.push(newBook);
+  renderBooks();
 }
 
 const sumbitBtn = document.querySelector("#submit-btn");
