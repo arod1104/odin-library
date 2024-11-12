@@ -72,6 +72,10 @@ function renderBooks() {
     toggleReadBtn.classList.add("toggle-read");
     toggleReadBtn.style.flex = "1";
     toggleReadBtn.style.height = "2rem";
+    toggleReadBtn.style.backgroundColor = book.read ? "#0066ff" : "#e6e6e6";
+    toggleReadBtn.style.color = book.read ? "white" : "black";
+    toggleReadBtn.style.border = "none";
+    toggleReadBtn.style.borderRadius = "4px";
     toggleReadBtn.addEventListener("click", () => {
       book.read = !book.read; // Toggle read status
       renderBooks(); // Re-render to reflect changes
@@ -79,6 +83,7 @@ function renderBooks() {
 
     // Set border color based on read status
     bookCard.style.borderColor = book.read ? "amber" : "gray";
+    // bookCard.style.borderWidth = "2px";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
